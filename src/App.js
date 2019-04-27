@@ -16,6 +16,7 @@ function App() {
         <div className="button">cables</div>
         <div className="button">upload</div>
       </section>
+      
       <img src="" alt=""/>
     </main>
   );

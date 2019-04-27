@@ -2,18 +2,29 @@ import React, {Component} from 'react';
 import ImageUploader from 'react-images-upload';
 import Wayste from '../wayste/'
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+>>>>>>> 5deae85d0a8d07780ee175d9a79a5bb89d90dc20
 export default class Home extends Component {
 
 	constructor(props){
 		super(props);
 		this.state = {
 			picture: 0,
+			data: []
 		};
 
-		this.onDrop = this.onDrop.bind(this);		
+		this.onDrop = this.onDrop.bind(this);
+		this.visionDataSend = this.visionDataSend.bind(this);		
 	}
 	
 
+	
 	// onDrop - run chain of actions once user submits an image.
 	onDrop = (pictureFile) => {
 		console.log("Uploading image.");
@@ -26,15 +37,27 @@ export default class Home extends Component {
 
 		// send image to google
 		if(this.state.picture != 0){
-			
+			this.visionDataSend();
 		}
-
-
 
 	}
 	
 	
+	async visionDataSend(){
 
+		const vision = require('@google-cloud/vision');
+		const client = new vision.ImageAnnotatorClient();
+
+		const [results] = await client.labelDetection("./src/images/desktop-1985856_1280.jpg");
+		console.log(results);
+		const lables = results.labelAnotations;
+		console.log("Label:");
+		lables.forEach(label => console.log(label));
+		// this.setState({data: lables});
+	};
+
+
+	
 
 	render(){
 
@@ -60,16 +83,3 @@ export default class Home extends Component {
 
 
 
-// async function quickstart() {
-//     // Imports the Google Cloud client library
-//     const vision = require('@google-cloud/vision');
-  
-//     // Creates a client
-//     const client = new vision.ImageAnnotatorClient();
-  
-//     // Performs label detection on the image file
-//     const [result] = await client.labelDetection('./src/images/desktop-1985856_1280.jpg');
-//     const labels = result.labelAnnotations;
-//     console.log('Labels:');
-//     labels.forEach(label => console.log(label.description));
-//   }
