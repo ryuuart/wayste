@@ -18,10 +18,12 @@ export default class Home extends Component {
 			data: []
 		};
 
-		this.onDrop = this.onDrop.bind(this);		
+		this.onDrop = this.onDrop.bind(this);
+		this.visionDataSend = this.visionDataSend.bind(this);		
 	}
 	
 
+	
 	// onDrop - run chain of actions once user submits an image.
 	onDrop = (pictureFile) => {
 		console.log("Uploading image.");
@@ -34,18 +36,23 @@ export default class Home extends Component {
 
 		// send image to google
 		if(this.state.picture != 0){
-			const [results] = await client.labelDetection(this.state.picture);
-			console.log(results);
-			const lables = result.labelAnotations;
-			console.log("Label:");
-			lables.forEach(label => console.log(label));
-			// this.setState({data: lables});
+			this.visionDataSend();
 		}
 
 	}
 	
 	
+	async visionDataSend(){
+		const [results] = await client.labelDetection(this.state.picture);
+		console.log(results);
+		const lables = results.labelAnotations;
+		console.log("Label:");
+		lables.forEach(label => console.log(label));
+		// this.setState({data: lables});
+	};
 
+
+	
 
 	render(){
 
