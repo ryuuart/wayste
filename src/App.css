@@ -46,6 +46,8 @@ main section .button {
   padding: 2.0vw;
   width: 90%;
   text-align: center;
+  text-align-last: center;
+  font-family: 'Nunito', sans-serif;
   font-size: 3.15vw;
 }
 /*# sourceMappingURL=App.css.map */
