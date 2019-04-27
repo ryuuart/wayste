@@ -4,10 +4,11 @@
   "private": true,
   "dependencies": {
     "@google-cloud/vision": "^0.25.0",
+    "http2": "^3.3.7",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-router-dom": "^5.0.0",
     "react-images-upload": "^1.2.6",
+    "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.0"
   },
   "scripts": {

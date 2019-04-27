@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 import ImageUploader from 'react-images-upload';
 import Wayste from '../wayste/'
 
-const vision = require('@google-cloud/vision');
-const client = new vision.ImageAnnotatorClient();
 
 
 
@@ -43,7 +41,11 @@ export default class Home extends Component {
 	
 	
 	async visionDataSend(){
-		const [results] = await client.labelDetection(this.state.picture);
+
+		const vision = require('@google-cloud/vision');
+		const client = new vision.ImageAnnotatorClient();
+
+		const [results] = await client.labelDetection("./src/images/desktop-1985856_1280.jpg");
 		console.log(results);
 		const lables = results.labelAnotations;
 		console.log("Label:");
@@ -78,16 +80,3 @@ export default class Home extends Component {
 
 
 
-// async function quickstart() {
-//     // Imports the Google Cloud client library
-//     const vision = require('@google-cloud/vision');
-  
-//     // Creates a client
-//     const client = new vision.ImageAnnotatorClient();
-  
-//     // Performs label detection on the image file
-//     const [result] = await client.labelDetection('./src/images/desktop-1985856_1280.jpg');
-//     const labels = result.labelAnnotations;
-//     console.log('Labels:');
-//     labels.forEach(label => console.log(label.description));
-//   }
