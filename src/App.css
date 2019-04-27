@@ -1,33 +1,51 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css?family=Lato:700|Nunito:300,400");
+* {
+  margin: 0;
+  overflow-x: hidden;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+main {
+  padding: 0 8vw;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+main h1 {
+  margin-top: 4vw;
+  margin-bottom: 5vw;
+  font-family: 'Lato', sans-serif;
+  font-size: 8.15vw;
+}
+
+main h2 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 4.15vw;
+}
+
+main h3 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 300;
+  font-size: 3.15vw;
+}
+
+main section {
+  margin-top: 3vw;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-column-gap: 1vw;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  grid-row-gap: 4vw;
+  justify-items: center;
+}
+
+main section .button {
+  background-color: black;
   color: white;
+  border-radius: 20vw;
+  padding: 2.0vw;
+  width: 90%;
+  text-align: center;
+  font-size: 3.15vw;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/*# sourceMappingURL=App.css.map */
