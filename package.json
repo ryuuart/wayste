@@ -8,7 +8,10 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-images-upload": "^1.2.6",
+<<<<<<< HEAD
     "react-router-dom": "^5.0.0",
+=======
+>>>>>>> 30c953147130ffac134a49f6e2cf97ce12dc279d
     "react-scripts": "3.0.0"
   },
   "scripts": {
