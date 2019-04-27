@@ -6,11 +6,8 @@
     "@google-cloud/vision": "^0.25.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-<<<<<<< HEAD
     "react-router-dom": "^5.0.0",
-=======
     "react-images-upload": "^1.2.6",
->>>>>>> 535e29517c3699387147fa06befcd2817ceee347
     "react-scripts": "3.0.0"
   },
   "scripts": {

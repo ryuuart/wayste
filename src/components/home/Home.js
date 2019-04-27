@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import ImageUploader from 'react-images-upload';
 import Wayste from '../wayste/'
 
+const vision = require('@google-cloud/vision');
+const client = new vision.ImageAnnotatorClient();
+
 
 
 
@@ -12,6 +15,7 @@ export default class Home extends Component {
 		super(props);
 		this.state = {
 			picture: 0,
+			data: []
 		};
 
 		this.onDrop = this.onDrop.bind(this);		
@@ -30,10 +34,13 @@ export default class Home extends Component {
 
 		// send image to google
 		if(this.state.picture != 0){
-			
+			const [results] = await client.labelDetection(this.state.picture);
+			console.log(results);
+			const lables = result.labelAnotations;
+			console.log("Label:");
+			lables.forEach(label => console.log(label));
+			// this.setState({data: lables});
 		}
-
-
 
 	}
 	
