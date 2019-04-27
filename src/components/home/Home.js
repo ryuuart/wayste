@@ -2,11 +2,14 @@ import React, {Component} from 'react';
 import ImageUploader from 'react-images-upload';
 import Wayste from '../wayste/'
 
+<<<<<<< HEAD
+=======
 
 
 
 
 
+>>>>>>> 5deae85d0a8d07780ee175d9a79a5bb89d90dc20
 export default class Home extends Component {
 
 	constructor(props){
