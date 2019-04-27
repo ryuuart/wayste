@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import ImageUploader from 'react-images-upload';
 import Home from './components/home/Home'
 
 
