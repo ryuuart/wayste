@@ -18,27 +18,26 @@ export default class Home extends Component {
 	}
 	
 
+	// onDrop - run chain of actions once user submits an image.
 	onDrop = (pictureFile) => {
 		console.log("Uploading image.");
 		console.log(pictureFile);
+		
+		// Added image to state
 		this.setState({
 			picture: pictureFile
 		});
+
+		// send image to google
+		if(this.state.picture != 0){
+			
+		}
+
+
+
 	}
 	
-	async function quickstart() {
-		// Imports the Google Cloud client library
-		const vision = require('@google-cloud/vision');
-	  
-		// Creates a client
-		const client = new vision.ImageAnnotatorClient();
-	  
-		// Performs label detection on the image file
-		const [result] = await client.labelDetection('./resources/wakeupcat.jpg');
-		const labels = result.labelAnnotations;
-		console.log('Labels:');
-		labels.forEach(label => console.log(label.description));
-	  }
+	
 
 
 	render(){
@@ -52,13 +51,29 @@ export default class Home extends Component {
 							onChange={this.onDrop}
 							imgExtension={['.jpg', '.gif', '.png', '.gif', '.jpeg']}
 							maxFileSize={5242880}
-							/>
+				/>
 
-				{this.state.picture!=0 ? <Wayste/> : <p>Nothing Uploaded</p>}
 
+				{ this.state.picture != 0 ? <Wayste/> : <p> Nothing Uploaded </p> }
 			</>
 		);
 	}
 
 
 };
+
+
+
+// async function quickstart() {
+//     // Imports the Google Cloud client library
+//     const vision = require('@google-cloud/vision');
+  
+//     // Creates a client
+//     const client = new vision.ImageAnnotatorClient();
+  
+//     // Performs label detection on the image file
+//     const [result] = await client.labelDetection('./src/images/desktop-1985856_1280.jpg');
+//     const labels = result.labelAnnotations;
+//     console.log('Labels:');
+//     labels.forEach(label => console.log(label.description));
+//   }
