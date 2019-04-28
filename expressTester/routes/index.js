@@ -40,13 +40,15 @@ router.get('/', function(req, res, next) {
 
 // returns json from freshly render visionDataSend()
 
-/*
 router.post('/', function(req, res){
 	visionDataSend().then((data) => {
 	  
 	});
 });
-*/
+
+
+
+
 
 router.get('/saved', function(req, res, next){
 	//var reader = fs.createReaderStream('output.txt');
