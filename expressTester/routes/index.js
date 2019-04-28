@@ -41,9 +41,12 @@ router.get('/', function(req, res, next) {
 // returns json from freshly render visionDataSend()
 
 router.post('/', function(req, res){
-	visionDataSend().then((data) => {
-	  
-	});
+	let userImg64 = req.body.image64;
+	console.log(userImg64);
+	res.end(userImg64);
+	// visionDataSend().then((data) => {
+		
+	// });
 });
 
 

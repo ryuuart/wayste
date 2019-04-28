@@ -2,7 +2,13 @@
 
 # dependencies
 /node_modules
+<<<<<<< HEAD
 /expressTestergit/node_modules
+=======
+/expressTester/node_modules
+
+
+>>>>>>> c1fa301047f9f2cca6bb903613e892be2d944da8
 /.pnp
 .pnp.js
 
@@ -26,4 +32,3 @@ yarn-error.log*
 Wayste-e55451f76fdf.json
 
 
-*/node_modules
