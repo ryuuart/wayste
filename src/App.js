@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import './App.css';
 import ImageUploader from 'react-images-upload';
-import Home from './components/home/Home';
 import Wayste from './components/wayste/'
+
+
+
 
 
 class App extends Component {
@@ -14,7 +16,7 @@ class App extends Component {
 		};
 
 		this.onDrop = this.onDrop.bind(this);
-		this.visionDataSend = this.visionDataSend.bind(this);		
+		// this.visionDataSend = this.visionDataSend.bind(this);		
   }
   
   // onDrop - run chain of actions once user submits an image.
@@ -27,26 +29,23 @@ class App extends Component {
 			picture: pictureFile
 		});
 
-		// send image to google
-		if(this.state.picture != 0){
-			this.visionDataSend();
-		}
+    // send image to google
+    
+    console.log("running google vision.");
+		// visionDataSend();
 
   }
   
 
-  async visionDataSend(){
 
-		const vision = require('@google-cloud/vision');
-		const client = new vision.ImageAnnotatorClient();
+  
+  componentDidMount(){
+    console.log("trying vision.")
 
-		const [results] = await client.labelDetection("./src/images/desktop-1985856_1280.jpg");
-		console.log(results);
-		const lables = results.labelAnotations;
-		console.log("Label:");
-		lables.forEach(label => console.log(label));
-		// this.setState({data: lables});
-	};
+
+
+  }
+
   render() {
     return (
       <main>
@@ -66,7 +65,7 @@ class App extends Component {
 				/>
 
 
-				{ this.state.picture != 0 ? <Wayste/> : <p> Nothing Uploaded </p> }
+				{ this.state.picture !== 0 ? <Wayste/> : <p> Nothing Uploaded </p> }
         </section>
         <img src="" alt=""/>
       </main>

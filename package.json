@@ -5,6 +5,7 @@
   "dependencies": {
     "@google-cloud/vision": "^0.25.0",
     "http2": "^3.3.7",
+    "pify": "^4.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-images-upload": "^1.2.6",
