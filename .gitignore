@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/expressTestergit/node_modules
 /.pnp
 .pnp.js
 

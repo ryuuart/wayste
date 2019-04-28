@@ -3,10 +3,6 @@ import './App.css';
 import ImageUploader from 'react-images-upload';
 import Wayste from './components/wayste/'
 
-
-
-
-
 class App extends Component {
   constructor(props) {
 		super(props);
@@ -53,21 +49,6 @@ class App extends Component {
         <h2>Can I Throw This Away?</h2>
         <h3>Choose a button or upload a photo and see</h3>
         <section>
-<<<<<<< HEAD
-          <div className="button">batteries</div>
-          <div className="button">printers</div>
-          <div className="button">cables</div>
-          <ImageUploader 
-							widthIcon={true}
-							buttonText="Chooese images"
-							onChange={this.onDrop}
-							imgExtension={['.jpg', '.gif', '.png', '.gif', '.jpeg']}
-							maxFileSize={5242880}
-				/>
-
-
-				{ this.state.picture !== 0 ? <Wayste/> : <p> Nothing Uploaded </p> }
-=======
           <div className="container">
             <div className="button">batteries</div>
             <div className="button">printers</div>
@@ -98,7 +79,6 @@ class App extends Component {
                 maxFileSize={5242880}
             />
           </div>
->>>>>>> 982123e1f131b28df29baea7b9fef511c27f862f
         </section>
 				{ this.state.picture != 0 ? <Wayste/> : <p> Nothing Uploaded </p> }
         <img src="" alt=""/>
