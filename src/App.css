@@ -27,6 +27,16 @@ main h3 {
 }
 
 main section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main section .container {
+  width: 100%;
   margin-top: 3vw;
   display: -ms-grid;
   display: grid;
@@ -39,13 +49,43 @@ main section {
   justify-items: center;
 }
 
-main section .button {
+main section .container .button {
   background-color: black;
   color: white;
   border-radius: 20vw;
   padding: 2.0vw;
-  width: 90%;
+  width: 80%;
   text-align: center;
+  text-align-last: center;
+  font-family: 'Nunito', sans-serif;
   font-size: 3.15vw;
+}
+
+@media (orientation: portrait) {
+  main h1 {
+    font-size: 12vw;
+    margin-top: 20vw;
+    margin-bottom: 15vw;
+  }
+  main h2 {
+    font-size: 6vw;
+  }
+  main h3 {
+    margin-top: 3vw;
+    font-size: 5vw;
+  }
+  main section {
+    margin-top: 8vw;
+  }
+  main section .container {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    grid-row-gap: 6vw;
+  }
+  main section .container .button {
+    padding: 3vw;
+    width: 70%;
+    font-size: 4.5vw;
+  }
 }
 /*# sourceMappingURL=App.css.map */
