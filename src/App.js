@@ -54,38 +54,38 @@ class App extends Component {
         <h2>Can I Throw This Away?</h2>
         <h3>Choose a button or upload a photo and see</h3>
         <section>
-          <div className="button">batteries</div>
-          <div className="button">printers</div>
-          <div className="button">cables</div>
-          <ImageUploader 
-              fileContainerStyle={{
-                margin: 0,
-                padding: 0,
-                width: '100%',
-                boxShadow: 'none',
-              }}
-              buttonStyles={{
-                margin: 0,
-                backgroundColor: 'black',
-                color: 'white',
-                width: '100%',
-                borderRadius: '20vw',
-                padding: '2.0vw',
-                textAlign: 'center',
-                fontSize: '3.15vw'
-              }}
-              withLabel={false}
-              withIcon={false}
-              widthIcon={true}
-							buttonText="choose images"
-							onChange={this.onDrop}
-							imgExtension={['.jpg', '.gif', '.png', '.gif', '.jpeg']}
-							maxFileSize={5242880}
-				/>
-
-
-				{ this.state.picture != 0 ? <Wayste/> : <p> Nothing Uploaded </p> }
+          <div className="container">
+            <div className="button">batteries</div>
+            <div className="button">printers</div>
+            <div className="button">cables</div>
+            <ImageUploader 
+                fileContainerStyle={{
+                  margin: 0,
+                  padding: 0,
+                  width: '100%',
+                  boxShadow: 'none',
+                }}
+                buttonStyles={{
+                  margin: 0,
+                  backgroundColor: 'black',
+                  color: 'white',
+                  width: '100%',
+                  borderRadius: '20vw',
+                  padding: '2.0vw',
+                  textAlign: 'center',
+                  fontSize: '3.15vw'
+                }}
+                withLabel={false}
+                withIcon={false}
+                widthIcon={true}
+                buttonText="choose images"
+                onChange={this.onDrop}
+                imgExtension={['.jpg', '.gif', '.png', '.gif', '.jpeg']}
+                maxFileSize={5242880}
+            />
+          </div>
         </section>
+				{ this.state.picture != 0 ? <Wayste/> : <p> Nothing Uploaded </p> }
         <img src="" alt=""/>
       </main>
     );
